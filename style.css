@@ -1,0 +1,162 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 300% 300%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.photo-frame {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid #ff6b81;
+    margin: 0 auto 25px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.4);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    color: #d23669;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.wish {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+#wishBtn {
+    background-color: #ff6b81;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 107, 129, 0.4);
+}
+
+#wishBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.6);
+    background-color: #d23669;
+}
+
+.signature {
+    font-style: italic;
+    color: #777;
+    margin-top: 20px;
+}
+
+.signature span {
+    font-weight: bold;
+    color: #ff6b81;
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff6b81;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    animation: confettiFall 5s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+    .title {
+        font-size: 2.2rem;
+    }
+    .photo-frame {
+        width: 150px;
+        height: 150px;
+    }
+}
